@@ -1,0 +1,125 @@
+---
+slug: databend
+name: Databend
+description: |
+  Databend is an open-source cloud data warehouse written in Rust that delivers lightning-fast analytics and AI-augmented SQL at a fraction of Snowflake’s cost.  It can run fully self-hosted or in Databend’s serverless cloud for effortless scale.
+logo: https://avatars.githubusercontent.com/u/76019121?s=64&v=4
+category: analytics
+tags: [rust, data-warehouse, analytics, ai, cloud]
+github: databendlabs/databend
+urls:
+  website: https://databend.com
+alternatives:
+  selfHosted: [clickhouse, starrocks, trino, presto]
+  nonSelfHosted: [snowflake, bigquery, redshift, databricks]
+deployment:
+  difficulty: Medium
+  justification: Docker images are provided but the cluster architecture and optional cloud storage configuration require some setup knowledge.
+pricingModel: Open-Core
+hostingType: Hybrid
+license: ELv2
+
+featureGroups:
+  - name: Core
+    features:
+      - name: Focus
+        value: High-performance columnar data warehouse with built-in AI SQL functions
+      - name: Target Use Case
+        value: Interactive analytics over terabyte-to-petabyte scale data lakes
+      - name: Architecture
+        value: Decoupled compute-storage engine in Rust with Apache Arrow memory format
+  - name: Core Analytics
+    features:
+      - name: ANSI-SQL support
+      - name: Vector & ML functions
+      - name: Materialized & virtual views
+      - name: Distributed execution engine
+      - name: Window & analytic functions
+      - name: ACID multi-table transactions
+  - name: Data Management
+    features:
+      - name: COPY-INTO & Stream ingest
+      - name: Time-travel & versioning
+      - name: Aggregating index
+      - name: Semi-structured VARIANT type
+      - name: Lakehouse table support (Iceberg, Delta, Hive)
+      - name: Row-level security & masking
+  - name: Performance & Scalability
+    features:
+      - name: Columnar storage with compression
+      - name: SIMD-accelerated query engine
+      - name: Elastic compute clusters
+      - name: Real-time incremental updates
+      - name: GPU-ready vector execution
+      - name: Cost-based optimizer
+---
+
+Databend is an open-source, Rust-powered data warehouse designed for real-time analytics, AI-enhanced SQL and lake-house flexibility.  Its decoupled compute-storage architecture rivals Snowflake’s speed while remaining fully deployable on your own infrastructure.
+
+## Key Features
+
+- **Core Analytics**:
+
+  - Full ANSI-SQL with advanced analytics
+  - AI text-to-SQL and embedding functions
+  - Materialized, virtual and streaming views
+  - Distributed query planner & executor
+  - Window, bitmap and geo functions
+  - ACID compliant multi-table transactions
+
+- **Data Management**:
+
+  - Fast COPY-INTO, CDC and stream ingestion
+  - Time-travel snapshots and Git-like versions
+  - Aggregating & full-text indexes
+  - Native VARIANT & semi-structured columns
+  - Hive, Iceberg and Delta Lake table access
+  - Row-level security, masking policies
+
+- **Performance & Scalability**:
+
+  - Columnar storage with ZSTD compression
+  - SIMD & vectorized execution engine
+  - Elastic compute clusters & auto-scale
+  - Real-time incremental data refresh
+  - GPU-accelerated vector search
+  - Cost-based query optimizer
+
+- **Integration & API**:
+  - JDBC/ODBC, REST and gRPC endpoints
+  - Python, Go and Java clients
+  - Grafana, Superset, Tableau connectors
+  - S3, GCS, Azure Blob external stages
+  - Debezium & Flink CDC pipelines
+  - Terraform & Kubernetes operators
+
+## Who Should Use Databend
+
+Databend is ideal for:
+
+- **Data Engineers** building fast, low-maintenance analytics stacks  
+- **Analysts & BI Teams** needing sub-second SQL over massive datasets  
+- **AI/ML Practitioners** embedding vector search and generative SQL in workflows  
+- **Enterprises** seeking a self-hosted Snowflake alternative with full data control  
+
+## Getting Started
+
+Databend offers quick local and production deployments:
+
+1. **Run with Docker**:
+
+   ```bash
+   docker pull datafuselabs/databend
+   docker run --net=host datafuselabs/databend
+   ```
+
+2. **Build from Source (Rust 1.77+)**:
+   ```bash
+   git clone https://github.com/databendlabs/databend.git
+   cd databend
+   ./scripts/setup/dev_setup.sh   # install deps
+   make build release
+   ./target/release/databend-meta & ./target/release/databend-query
+   ```
+
+Extensive docs, Slack community and sample notebooks make setup and exploration straightforward even for first-time users.
