@@ -1,0 +1,74 @@
+---
+slug: 1time
+name: 1time.io
+description: |
+  Zero-knowledge encrypted one-time secret sharing. Browser-side AES-256-GCM encryption ensures the server never sees plaintext. Secrets self-destruct after first read. Includes CLI tool, password generators, and full self-hosting via Docker Compose.
+logo: https://1time.io/logo.png
+category: security
+tags: [security, password-sharing, secrets, privacy, encryption, zero-knowledge, cli]
+github: shingrus/1time.io
+urls:
+  website: https://1time.io
+alternatives:
+  selfHosted: [onetimesecret, ots, shhh, yopass]
+  nonSelfHosted: [onetimesecret]
+deployment:
+  difficulty: "Easy"
+  justification: |
+    Three-container Docker Compose setup with pre-built images from GHCR. Copy .env, set hostname, docker compose up. Under 100MB total.
+pricingModel: Free
+hostingType: Self-Hosted
+featureGroups:
+  - name: Core
+    features:
+      - name: One-time secret sharing
+        value: Links self-destruct after first read
+      - name: Expiration control
+        value: TTL from 5 minutes to 7 days
+      - name: Password protection
+        value: Optional passphrase for extra security
+  - name: Security
+    features:
+      - name: Zero-knowledge encryption
+        value: AES-256-GCM with HKDF, entirely client-side
+      - name: No plaintext on server
+        value: Decryption key stays in URL fragment, never transmitted
+      - name: No accounts or tracking
+        value: No signup, no cookies, no analytics
+  - name: Developer Tools
+    features:
+      - name: CLI tool
+        value: Pipe-friendly, reads from stdin, env var, or argument
+      - name: Password generators
+        value: Strong passwords, passphrases, WiFi passwords, API keys
+      - name: REST API
+        value: Simple HTTP API for integration
+  - name: Deployment
+    features:
+      - name: Docker Compose
+        value: 3 containers — Go backend, nginx frontend, Redis
+      - name: Pre-built images
+        value: GHCR images, no build required
+      - name: Lightweight
+        value: Under 100MB total footprint
+---
+
+1time is a zero-knowledge secret sharing tool that creates encrypted one-time links for passwords, API keys, and sensitive text. All encryption happens in the browser using AES-256-GCM with HKDF key derivation — the server never sees plaintext, and the decryption key exists only in the URL fragment.
+
+### Privacy by Design
+
+- **Client-side encryption**: AES-256-GCM encryption and decryption run entirely in the browser. The server stores only ciphertext and has no way to decrypt it.
+
+- **URL fragment isolation**: The decryption key is placed in the URL fragment (#), which browsers never send to the server. Even if the server is compromised, secrets remain encrypted.
+
+- **No accounts, no tracking**: No signup required, no cookies set, no analytics collected. Completely anonymous usage.
+
+### CLI and Automation
+
+- **Pipe-friendly CLI**: `printf 'postgres://user:pass@host/db' | 1time send` creates an encrypted link from your terminal. Reads from stdin, `1TIME_SECRET` env var, or positional argument.
+
+- **Self-hosted instances**: Point the CLI at your own deployment with `--host` flag. HTTPS enforced except for localhost.
+
+### Built-in Generators
+
+- Strong random passwords, memorable passphrases, WiFi-safe passwords, and API key generators — all running client-side with no server calls.
