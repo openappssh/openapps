@@ -1,0 +1,88 @@
+---
+slug: posnic
+name: Posnic
+description: |
+  Posnic is offline-first open source POS and billing software for retail shops and restaurants. It combines local checkout, inventory, purchasing, reporting, and restaurant workflows with desktop and self-hosted deployment options.
+logo: https://avatars.githubusercontent.com/u/4673961?v=4
+category: inventory-management
+tags: [pos, billing, inventory, retail, restaurant, offline-first]
+github: Posnic/POS
+urls:
+  website: https://posnic.io/
+alternatives:
+  selfHosted: []
+  nonSelfHosted: [square-pos, clover-pos, shopify-pos]
+deployment:
+  difficulty: "Medium"
+  justification: "Desktop packages provide local offline operation. The documented Ubuntu self-hosted setup installs Node.js, MongoDB, and a systemd service and requires normal server administration."
+pricingModel: Free
+hostingType: Self-Hosted
+
+featureGroups:
+  - name: Sales and Billing
+    features:
+      - name: Offline Checkout
+      - name: Barcode Scanning
+      - name: Returns and Held Bills
+      - name: Part Payments
+      - name: Tax Invoices
+  - name: Inventory
+    features:
+      - name: Items and Variants
+      - name: Categories
+      - name: Purchases
+      - name: Supplier Returns
+      - name: Inventory Logs
+      - name: Low-stock Alerts
+  - name: Operations
+    features:
+      - name: Customer Accounts
+      - name: Sales and Purchase Reports
+      - name: Expense and Profit Reports
+      - name: Staff Roles and Permissions
+      - name: Restaurant Kitchen Orders
+  - name: Deployment
+    features:
+      - name: Windows, macOS, and Linux Packages
+      - name: Local Desktop Operation
+      - name: Self-hosted Ubuntu Server
+      - name: Online/Offline POS Workflows
+---
+
+Posnic is open source POS and billing software for retail shops and restaurants.
+It is designed around offline-first checkout: the primary application and
+database can run on a shop computer, while operators can also deploy one
+self-hosted server for several users in a single shop.
+
+## Key Features
+
+- **Sales and billing**: Keyboard- and touch-oriented checkout, barcode
+  scanning, returns, held bills, quick sales, part payments, and tax invoices.
+- **Inventory management**: Items, variants, categories, purchases, supplier
+  returns, stock logs, and low-stock alerts.
+- **Retail operations**: Customer accounts, staff roles, branch stock, and
+  exportable sales, purchase, inventory, expense, and profit reports.
+- **Restaurant workflows**: Kitchen order tickets, table management, kiosk
+  support, and customer displays.
+- **Hardware paths**: Documentation covers thermal printers, barcode scanners,
+  cash drawers, weighing scales, and second displays. Exact devices still need
+  testing against the project's hardware matrix.
+
+## Deployment
+
+Desktop release packages support local operation on Windows, macOS, and Linux.
+The documented Ubuntu self-hosting path installs Node.js 22, MongoDB 8, Posnic,
+and a systemd service. A self-hosted deployment uses one database for several
+people; synchronization between separate tills or branches is a different
+service and is not claimed as part of self-hosting.
+
+## Project Links
+
+- [Official Posnic website](https://posnic.io/)
+- [Open source POS repository](https://github.com/Posnic/POS)
+- [Self-hosting guide](https://github.com/Posnic/POS/blob/develop/docs/SELF_HOSTING.md)
+- [Release downloads](https://github.com/Posnic/POS/releases/latest)
+
+Posnic's own source is licensed under AGPL-3.0-only. Release packages include
+separately licensed components, so package-level licensing should be checked
+against the repository's notices before redistribution.
