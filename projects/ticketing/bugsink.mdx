@@ -1,0 +1,101 @@
+---
+slug: bugsink
+name: Bugsink
+description: |
+  Bugsink is a self-hostable, sentry-SDK-compatible, European-based 
+category: ticketing
+tags: [error-tracking, monitoring, python, sentry-alternative, debugging]
+github: bugsink/bugsink
+urls:
+  website: https://www.bugsink.com
+alternatives:
+  selfHosted: [sentry, bugsnag-alternative, rollbar-alternative]
+  nonSelfHosted: [sentry-saas, bugsnag, rollbar]
+deployment:
+  difficulty: "Easy"
+  justification: "Single Python/Django application with Docker (single container) support."
+pricingModel: Open-Core
+hostingType: Hybrid
+
+featureGroups:
+  - name: Core
+    features:
+      - name: Focus
+        value: Error tracking
+      - name: Target Use Case
+        value: Application error monitoring and debugging
+      - name: Architecture
+        value: Python + Django + Database + Docker
+  - name: Error Tracking
+    features:
+      - name: Real-time Error Capture
+      - name: Error Grouping
+      - name: Stack Trace Analysis
+      - name: Error Frequency Tracking
+      - name: Issue Management
+  - name: Alerting
+    features:
+      - name: Email Notifications
+      - name: Webhook Integration
+      - name: Slack Alerts
+      - name: Custom Alert Rules
+      - name: Escalation Policies
+  - name: Integration
+    features:
+      - name: Multiple SDKs
+      - name: Language Support
+      - name: Framework Integration
+      - name: API Access
+      - name: Third-party Tools
+  - name: Analytics
+    features:
+      - name: Error Analytics
+      - name: Trend Analysis
+      - name: Performance Metrics
+      - name: Custom Dashboards
+      - name: Reporting Tools
+  - name: Deployment
+    features:
+      - name: Docker Support
+      - name: Self-hosted Option
+      - name: Cloud Hosting
+      - name: Scalable Architecture
+---
+
+Bugsink is an error tracker designed as an self-hostable alternative to Sentry. Built with Python and Django, it provides development teams with powerful tools to capture, analyze, and resolve application errors and performance issues in real-time.
+
+## Key Features
+
+* [Error Tracking](https://www.bugsink.com/error-tracking/)
+* [Built to self-host](https://www.bugsink.com/built-to-self-host/)
+* [Sentry-SDK compatible](https://www.bugsink.com/connect-any-application/)
+* [Scalable and reliable](https://www.bugsink.com/scalable-and-reliable/)
+
+### Screenshot
+
+![Screenshot](https://www.bugsink.com/static/images/JsonSchemaDefinitionException.5e02c1544273.png)
+
+
+### Installation & docs
+
+The **quickest way to evaluate Bugsink** is to spin up a throw-away instance using Docker:
+
+```
+docker pull bugsink/bugsink:latest
+
+docker run \
+  -e SECRET_KEY=PUT_AN_ACTUAL_RANDOM_SECRET_HERE_OF_AT_LEAST_50_CHARS \
+  -e CREATE_SUPERUSER=admin:admin \
+  -e PORT=8000 \
+  -p 8000:8000 \
+  bugsink/bugsink
+```
+
+Visit [http://localhost:8000/](http://localhost:8000/), where you'll see a login screen. The default username and password
+are `admin`.
+
+Now, you can [set up your first project](https://www.bugsink.com/docs/quickstart/) and start tracking errors.
+
+[Detailed installation instructions](https://www.bugsink.com/docs/installation/) are on the Bugsink website.
+
+[More information and documentation](https://www.bugsink.com/)
