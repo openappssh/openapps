@@ -1,0 +1,81 @@
+---
+slug: telemetry-tracker
+name: Telemetry Tracker
+description: |
+  Telemetry Tracker is an open-source, self-hostable error tracker for side projects and small teams. It groups errors with release tags and source maps, records events and sessions, and sends alerts — with SDKs for Next.js, React, Vue, Nuxt, React Native, Node.js and NestJS.
+category: ticketing
+tags: [error-tracking, monitoring, typescript, sentry-alternative, self-hosted, debugging]
+github: Telemetry-Tracker/telemetry-tracker
+urls:
+  website: https://telemetry-tracker.com
+alternatives:
+  selfHosted: [glitchtip, bugsink, sentry]
+  nonSelfHosted: [sentry-saas, bugsnag, rollbar]
+deployment:
+  difficulty: "Medium"
+  justification: "Docker Compose or manual deploy with a Fastify API, Next.js dashboard and PostgreSQL. Documented in DEPLOYMENT.md."
+pricingModel: Open-Core
+hostingType: Hybrid
+
+featureGroups:
+  - name: Core
+    features:
+      - name: Focus
+        value: Error tracking for JavaScript and TypeScript apps
+      - name: Target Use Case
+        value: Side projects and small teams that want a lighter Sentry alternative
+      - name: Architecture
+        value: TypeScript + Fastify + Next.js + PostgreSQL + Docker
+  - name: Error Tracking
+    features:
+      - name: Grouped Errors
+      - name: Stack Trace Analysis
+      - name: Source Map Upload
+      - name: Release Tags
+      - name: Issue Triage
+  - name: Sessions and Events
+    features:
+      - name: Event Tracking
+      - name: Session Monitoring
+      - name: Web Vitals
+      - name: Custom Properties
+  - name: Alerting
+    features:
+      - name: Email Notifications
+      - name: Webhook Integration
+      - name: Slack Alerts
+      - name: Discord Alerts
+      - name: Microsoft Teams and Telegram
+  - name: Integration
+    features:
+      - name: Next.js SDK
+      - name: React SDK
+      - name: Vue and Nuxt via core
+      - name: React Native SDK
+      - name: Node.js and NestJS SDK
+  - name: Deployment
+    features:
+      - name: Docker Support
+      - name: Self-hosted Option
+      - name: Free Hosted Plan
+      - name: PostgreSQL Backend
+---
+
+Telemetry Tracker is an MIT-licensed error tracker aimed at side projects and small teams on JavaScript and TypeScript stacks. It groups exceptions with release tags, symbolicates stacks when you upload source maps, and also records events, sessions and Web Vitals in the same store.
+
+## Key Features
+
+- **Error tracking**: Grouped issues, stack traces, release tags, and source map upload for readable frames.
+- **Events and sessions**: Typed events with custom properties and session activity for anonymous or identified users.
+- **Web Vitals**: LCP, INP, CLS and TTFB from real browser visits in the same SDK.
+- **Alerts**: In-app, email, HTTPS webhooks, Slack, Discord, Microsoft Teams and Telegram.
+- **SDKs**: Next.js, React, Vue/Nuxt (via `@telemetry-tracker/core`), React Native, Node.js and NestJS (via `@telemetry-tracker/node`).
+- **Hosting**: Self-host with Docker/Postgres, or use the free hosted plan (250K ingest units/month, 14-day retention, 1 project).
+
+## Self-hosting
+
+See [DEPLOYMENT.md](https://github.com/Telemetry-Tracker/telemetry-tracker/blob/main/DEPLOYMENT.md) for Docker Compose and production guidance. The stack is a Fastify API, a Next.js dashboard and PostgreSQL.
+
+## Licence
+
+MIT
